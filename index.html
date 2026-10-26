@@ -1665,7 +1665,46 @@
       .analytics-disclosure p { margin: 8px 0; line-height: 1.85; max-width: 850px; }
       .analytics-disclosure a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
-<!-- GoatCounter: 기본 방문 수 집계, GA4/Clarity는 동의 후 로드 -->
+<!-- Google Analytics 4 / 지역별 Consent Mode v2 ----------------------------------
+     Google 태그는 유럽경제지역(EEA)·영국·스위스에서 분석 쿠키를 기본 거부합니다.
+     다른 지역에서는 analytics_storage만 granted이며 광고 관련 동의는 항상 거부합니다.
+     참고: denied 상태에서도 GA4는 쿠키 없는 측정 신호를 전송할 수 있습니다.
+     이 설정은 지역별 법적 요건을 자동으로 충족한다는 보증이 아닙니다.
+     지역별 동의 기본값을 설정한 뒤 Google 태그를 불러와야 합니다.
+     공식 문서: https://developers.google.com/tag-platform/security/guides/consent
+-->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+
+  // EEA 30개국 + 영국(GB) + 스위스(CH): 분석 쿠키 사용 거부.
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    region: [
+        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
+      ]
+  });
+
+  // 그 외 지역(한국 포함): 분석 쿠키만 허용. 광고 목적의 저장/활용은 거부.
+  gtag('consent', 'default', {
+    analytics_storage: 'granted',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-79SCJTBGQ1', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-79SCJTBGQ1"></script>
+
+<!-- GoatCounter: 쿠키 없는 기본 방문 수와 사용자 정의 이벤트 집계 -->
 <script>
     // 방문 경로는 '/' 하나로 통합합니다. UTM은 GoatCounter의 Campaigns에서 별도 집계합니다.
     // 예: ?utm_source=jobkorea&utm_medium=resume&utm_campaign=portfolio_2026
@@ -2242,7 +2281,7 @@
 </div>
 </div>
 <div class="container footer-end"><span>신충호  /  Senior Software Engineer</span><span>C# · .NET · WPF</span></div>
-<div class="container analytics-disclosure" id="privacy-note"><details><summary>익명 방문 통계 안내</summary><p>이 사이트는 콘텐츠 개선을 위해 방문 횟수, 유입 경로(캠페인 태그), 프로젝트·설계 사례의 화면 노출 및 메뉴·버튼·증빙 링크 클릭 횟수를 집계합니다. 별도 추적 쿠키를 사용하지 않으며 방문자의 신원이나 이메일 주소를 분석 이벤트에 전송하지 않습니다.</p><p>방문 통계에는 GoatCounter를 사용합니다. 네트워크 연결 과정에서 IP 주소 등은 서비스에 일시적으로 처리될 수 있습니다. 데이터 처리 방식은 <a href="https://www.goatcounter.com/help/privacy" rel="noopener noreferrer" target="_blank">GoatCounter 개인정보 안내</a>에서 확인할 수 있습니다.</p></details></div>
+<div class="container analytics-disclosure" id="privacy-note"><details><summary>익명 방문 통계 안내</summary><p>포트폴리오 개선을 위해 방문 횟수, 유입 경로(UTM 캠페인), 프로젝트·설계 사례의 제목 노출, 메뉴·버튼·증빙 링크 클릭과 활성 열람 시간을 집계합니다. 이름이나 이메일 주소를 분석 이벤트에 전송하지 않습니다.</p><p>방문 집계에는 쿠키를 사용하지 않는 GoatCounter, 방문·행동 분석에는 Google Analytics 4를 사용합니다. Google Analytics는 대한민국 등 일부 지역에서 분석 쿠키를 사용할 수 있으며, 유럽경제지역·영국·스위스에서는 분석 쿠키가 기본 거부됩니다. 거부된 상태에서도 쿠키 없는 측정 요청이 전송될 수 있습니다.</p><p>접속 과정에서 IP 주소 등 네트워크 정보가 분석 서비스에 일시적으로 처리될 수 있습니다. 각 서비스의 상세 정보는 <a href="https://www.goatcounter.com/help/privacy" rel="noopener noreferrer" target="_blank">GoatCounter 개인정보 안내</a> 및 <a href="https://policies.google.com/privacy?hl=ko" rel="noopener noreferrer" target="_blank">Google 개인정보처리방침</a>을 참고해 주세요.</p></details></div>
 </footer>
 <dialog class="diagram-viewer" id="diagram-viewer"><button class="diagram-close" type="button">닫기 ×</button><img alt="확대된 설계 구조도"/></dialog>
 <!-- 방문자에게 상세 분석 여부를 선택할 수 있도록 안내 -->
@@ -2250,7 +2289,7 @@
 <!-- 이메일 복사 및 설계도 확대 기능 -->
 <script>
       /**
-       * 포트폴리오 익명 이용 통계 — GoatCounter
+       * 포트폴리오 이용 통계 — GoatCounter + GA4 맞춤 이벤트
        *
        * 집계 대상:
        *   - 상단 내비게이션 / 3개 프로젝트 카드 / 처음으로 돌아가기
@@ -2292,6 +2331,19 @@
             window.goatcounter.count(event);
           } else if (pendingEvents.length < MAX_QUEUED_EVENTS) {
             pendingEvents.push(event);
+          }
+
+          // 같은 행동을 GA4에도 이벤트로 기록합니다. 개인 식별 값/이메일/외부 URL 제외.
+          // gtag은 로드 전에 호출해도 dataLayer에 큐잉됩니다.
+          if (typeof window.gtag === 'function') {
+            const category = path.split('/')[0];
+            if (['click', 'view', 'result', 'engagement'].includes(category)) {
+              window.gtag('event', `portfolio_${category}`, {
+                interaction_path: path,
+                interaction_name: cleanTitle(title),
+                interaction_category: category
+              });
+            }
           }
         }
 

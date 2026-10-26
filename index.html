@@ -6,9 +6,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="C#/.NET 기반 클라이언트·서비스 설계 및 개발 — 비즈니스 요구를 실행 가능한 소프트웨어 구조로 설계하고, 구현·최적화까지 책임지는 개발자입니다." name="description"/>
 <title>신충호 | 시니어 소프트웨어 엔지니어</title>
-<!-- 사이트 스타일: 기존 순서 유지 + 방문 분석 안내 스타일 -->
+
 <style>
-      /* ========= 기존 스타일 그룹 1 / 선언 순서 유지 ========= */
+      
       
       :root {
         --bg: #fcf8f3;
@@ -570,7 +570,7 @@
         }
       }
       
-      /* 2026-10-23 High contrast amber theme: dark text on a warm light hero. */
+      
       
       :root {
         --bg: #fffaf5;
@@ -741,7 +741,7 @@
         }
       }
       
-      /* Functional contact actions and links */
+      
       
       .mail-actions {
         display: flex;
@@ -884,9 +884,9 @@
         -webkit-tap-highlight-color: transparent;
       }
       
-      /* ========= 기존 스타일 그룹 2 / 선언 순서 유지 ========= */
       
-      /* 2026-10-23 unified orange portfolio design / accessible typography */
+      
+      
       
       :root {
         --bg: #fff9f2;
@@ -1359,9 +1359,9 @@
         }
       }
       
-      /* ========= 기존 스타일 그룹 3 / 선언 순서 유지 ========= */
       
-      /* Balanced warm-orange design — matched visual identity between first/last sections */
+      
+      
       
       :root {
         --ink: #30241d;
@@ -1463,9 +1463,9 @@
         outline-offset: 3px;
       }
       
-      /* ========= 기존 스타일 그룹 4 / 선언 순서 유지 ========= */
       
-      /* 공개용 설계 사례 — 기존 오렌지/브라운 디자인 연계 */
+      
+      
       
       .architecture-section {
         background: #fbf6f0;
@@ -1623,7 +1623,7 @@
         }
       }
       
-      /* ========= 기존 스타일 그룹 5 / 선언 순서 유지 ========= */
+      
       
       .diagram-viewer {
         border: 0;
@@ -1658,26 +1658,12 @@
         cursor: pointer;
         font-weight: 800;
       }
-      
-      /* 페이지 하단 익명 통계 안내: 팝업 없이 펼쳐볼 수 있는 접이식 안내 */
-      .analytics-disclosure { padding-bottom: 18px; color: #513727; font-size: 11px; }
-      .analytics-disclosure summary { cursor: pointer; font-weight: 700; }
-      .analytics-disclosure p { margin: 8px 0; line-height: 1.85; max-width: 850px; }
-      .analytics-disclosure a { text-decoration: underline; text-underline-offset: 3px; }
 </style>
-<!-- Google Analytics 4 / 지역별 Consent Mode v2 ----------------------------------
-     Google 태그는 유럽경제지역(EEA)·영국·스위스에서 분석 쿠키를 기본 거부합니다.
-     다른 지역에서는 analytics_storage만 granted이며 광고 관련 동의는 항상 거부합니다.
-     참고: denied 상태에서도 GA4는 쿠키 없는 측정 신호를 전송할 수 있습니다.
-     이 설정은 지역별 법적 요건을 자동으로 충족한다는 보증이 아닙니다.
-     지역별 동의 기본값을 설정한 뒤 Google 태그를 불러와야 합니다.
-     공식 문서: https://developers.google.com/tag-platform/security/guides/consent
--->
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
 
-  // EEA 30개국 + 영국(GB) + 스위스(CH): 분석 쿠키 사용 거부.
   gtag('consent', 'default', {
     analytics_storage: 'denied',
     ad_storage: 'denied',
@@ -1688,7 +1674,6 @@
       ]
   });
 
-  // 그 외 지역(한국 포함): 분석 쿠키만 허용. 광고 목적의 저장/활용은 거부.
   gtag('consent', 'default', {
     analytics_storage: 'granted',
     ad_storage: 'denied',
@@ -1704,17 +1689,14 @@
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-79SCJTBGQ1"></script>
 
-<!-- GoatCounter: 쿠키 없는 기본 방문 수와 사용자 정의 이벤트 집계 -->
+
 <script>
-    // 방문 경로는 '/' 하나로 통합합니다. UTM은 GoatCounter의 Campaigns에서 별도 집계합니다.
-    // 예: ?utm_source=jobkorea&utm_medium=resume&utm_campaign=portfolio_2026
-    //     ?utm_source=saramin&utm_medium=resume&utm_campaign=portfolio_2026
     window.goatcounter = { path: '/' };
 </script><script async="" data-goatcounter="https://choongho-portfolio.goatcounter.com/count" src="https://gc.zgo.at/count.js">
 </script>
 </head>
 <body>
-<!-- 첫 화면 / 네비게이션 -->
+
 <header class="hero" id="top">
 <div class="container">
 <nav class="topnav">
@@ -1743,7 +1725,7 @@
 </div>
 </div>
 </header>
-<!-- 전문성 소개 -->
+
 <section class="section" id="about">
 <div class="container">
 <div class="eyebrow">EXPERTISE</div>
@@ -1773,7 +1755,7 @@
 </div>
 </div>
 </section>
-<!-- 대표 프로젝트 바로가기 -->
+
 <section class="section" id="projects">
 <div class="container">
 <div class="eyebrow">SELECTED WORK</div>
@@ -1782,7 +1764,7 @@
 <div class="projects"><a class="project-link" href="#finance"><div class="num">CASE 01</div><h3>신한은행 디지털데스크에서 AI 브랜치까지</h3><p>금융 거래 개발을 시작으로 AI 발화·챗봇 공통 실행, LLM 금융 업무 처리, 대화형 상담과 STT 고도화로 확장했습니다.</p><span class="arrow">↗</span></a><a class="project-link" href="#mirero"><div class="num">CASE 02</div><h3>미래로시스템 · 반도체 계측·검사 분석 소프트웨어 개발</h3><p>반도체 분석 프로그램의 클라이언트를 주도 개발하고, SSP에서는 데이터 처리 서비스를 개발·리팩터링했습니다.</p><span class="arrow">↗</span></a><a class="project-link" href="#douzone"><div class="num">CASE 03</div><h3>더존비즈온 · 여러 PC 메신저 클라이언트 개발 전담</h3><p>여러 기업용 PC 메신저의 클라이언트를 전담해 UI·통신·데이터·다중 창 상태를 구현했습니다.</p><span class="arrow">↗</span></a></div>
 </div>
 </section>
-<!-- 금융·은행권 상세 경력 -->
+
 <section class="detail" id="finance">
 <div class="container">
 <div class="detail-head">
@@ -1931,7 +1913,7 @@
 </article>
 </div>
 </section>
-<!-- 미래로시스템 반도체 분석 SW -->
+
 <section class="detail" id="mirero">
 <div class="container">
 <div class="detail-head">
@@ -1958,6 +1940,10 @@
 <strong>팀 재사용 기반</strong>
 <p><span class="sentence-line">동료들이 유사 기능을 복제해 구현하는 문제를 공통 컨트롤과 클래스 책임·상속 구조로 정리했습니다.</span><span class="sentence-line">직접 리팩터링한 구현과 적용 가이드를 개발자·퍼블리셔에게 제공했습니다.</span></p>
 </div>
+<div class="item" data-analytics-view="mms-messaging">
+<strong>메시징 선택과 리스너 실행 제어</strong>
+<p><span class="sentence-line">초기 Akka.Cluster PoC에서 통신 단절 시 클러스터 분할·재통합 문제를 확인하고, 서비스 간 작업 전달에는 RabbitMQ를 적용했습니다.</span><span class="sentence-line">단일 활성 실행이 필요한 리스너에는 Akka.Cluster의 Role Leader를 활용한 실행 제어를 구성했습니다.</span></p>
+</div>
 </div>
 <div class="stack">주요 기술  /  C#, .NET Framework, WPF (XAML), MVVM, ReactiveUI, Rx, SciChart, DevExpress, Akka.Cluster, Rendezvous Protocol, RabbitMQ, FTP</div>
 </article>
@@ -1967,9 +1953,9 @@
 <div class="subtitle">기존 클라이언트 기반 재사용 · 데이터 처리 서비스 개발과 리팩터링</div>
 <p class="context"><span class="sentence-line">SSP는 검사 데이터와 Patch Image를 수집하고, 레시피 기반 분석과 결과 제공·전송을 수행하는 프로그램입니다.</span><span class="sentence-line">MMS에서 개발한 클라이언트 기반을 재사용하면서, 데이터 처리·분석 서비스의 구현과 기존 코드의 구조 개선에 집중했습니다.</span></p>
 <div class="items">
-<div class="item">
-<strong>서비스 개발 및 구조 개선</strong>
-<p><span class="sentence-line">파일 감지·파싱, 이미지 수집·저장, 분석 실행, 데이터베이스 반영과 결과 전송에 필요한 서비스 기능을 개발했습니다.</span><span class="sentence-line">기존 실행 흐름과 의존 관계를 분석해 공통 기능과 개별 처리를 분리하고 리팩터링했습니다.</span></p>
+<div class="item" data-analytics-view="ssp-service-extension">
+<strong>기존 서비스 유지와 확장 구조 개선</strong>
+<p><span class="sentence-line">기존에 설치된 서비스의 기능을 유지하면서 새로운 수집·분석 기능이 동작하도록 서비스·라이브러리의 의존 관계와 실행 흐름을 재정비했습니다.</span><span class="sentence-line">공통 기능과 프로젝트별 구현을 분리하고, 파일 감지·파싱, 이미지 수집·저장, 분석 실행과 결과 전송에 필요한 서비스를 직접 개발·리팩터링했습니다.</span></p>
 </div>
 <div class="item">
 <strong>동시성·메시징과 운영 분석</strong>
@@ -2013,9 +1999,9 @@
 <div class="subtitle">검사 작업 파일 전송과 처리 상태를 관리하는 Windows 프로그램</div>
 <p class="context"><span class="sentence-line">삼성전기와 협력사 간에 검사 Lot·Panel의 파일과 작업 상태를 관리·전송하는 시스템입니다.</span><span class="sentence-line">기존 수작업과 파일 전송 오류를 줄이기 위한 업무 흐름이 요구됐습니다.</span></p>
 <div class="items">
-<div class="item">
-<strong>실행 환경별 클라이언트·서비스</strong>
-<p><span class="sentence-line">프로그램과 Loader를 개발하고 자동·수동 등록, 파일 감지·압축·전송, 작업 상태 조회·변경을 연결했습니다.</span><span class="sentence-line">협력사의 Windows XP/.NET Framework 4.0 환경도 고려했습니다.</span></p>
+<div class="item" data-analytics-view="iis-client-service">
+<strong>클라이언트·서비스 단독 개발과 환경 대응</strong>
+<p><span class="sentence-line">삼성전기와 협력사에서 사용하는 클라이언트·Loader 서비스를 혼자 개발하고, 파일 감지·압축·전송과 작업 상태 조회·변경·동기화를 연결했습니다.</span><span class="sentence-line">협력사의 Windows XP 환경에 맞춰 .NET Framework 4.0용 구성을 별도로 마련하고, 삼성전기 실행 환경과 구분해 적용했습니다.</span></p>
 </div>
 </div>
 <div class="stack">주요 기술  /  C#, WPF, .NET Framework, Akka.Remote, 파일 전송·상태 관리</div>
@@ -2036,7 +2022,7 @@
 </article>
 </div>
 </section>
-<!-- 더존비즈온 PC 메신저 -->
+
 <section class="detail" id="douzone">
 <div class="container">
 <div class="detail-head">
@@ -2142,7 +2128,7 @@
 </div>
 </div>
 </section>
-<!-- 설계·아키텍처 사례 -->
+
 <section class="section architecture-section" id="architecture">
 <div class="container">
 <div class="eyebrow">DESIGN EVIDENCE</div>
@@ -2225,7 +2211,7 @@
 </article>
 </div>
 </section>
-<!-- 기술 스택 -->
+
 <section class="section" id="skills">
 <div class="container">
 <div class="eyebrow">TECHNOLOGY</div>
@@ -2259,7 +2245,7 @@
 </div>
 </div>
 </section>
-<!-- 연락처 및 분석 고지 -->
+
 <footer class="footer" id="contact">
 <div class="container footer-main">
 <div class="footer-copy">
@@ -2281,36 +2267,20 @@
 </div>
 </div>
 <div class="container footer-end"><span>신충호  /  Senior Software Engineer</span><span>C# · .NET · WPF</span></div>
-<div class="container analytics-disclosure" id="privacy-note"><details><summary>익명 방문 통계 안내</summary><p>포트폴리오 개선을 위해 방문 횟수, 유입 경로(UTM 캠페인), 프로젝트·설계 사례의 제목 노출, 메뉴·버튼·증빙 링크 클릭과 활성 열람 시간을 집계합니다. 이름이나 이메일 주소를 분석 이벤트에 전송하지 않습니다.</p><p>방문 집계에는 쿠키를 사용하지 않는 GoatCounter, 방문·행동 분석에는 Google Analytics 4를 사용합니다. Google Analytics는 대한민국 등 일부 지역에서 분석 쿠키를 사용할 수 있으며, 유럽경제지역·영국·스위스에서는 분석 쿠키가 기본 거부됩니다. 거부된 상태에서도 쿠키 없는 측정 요청이 전송될 수 있습니다.</p><p>접속 과정에서 IP 주소 등 네트워크 정보가 분석 서비스에 일시적으로 처리될 수 있습니다. 각 서비스의 상세 정보는 <a href="https://www.goatcounter.com/help/privacy" rel="noopener noreferrer" target="_blank">GoatCounter 개인정보 안내</a> 및 <a href="https://policies.google.com/privacy?hl=ko" rel="noopener noreferrer" target="_blank">Google 개인정보처리방침</a>을 참고해 주세요.</p></details></div>
 </footer>
 <dialog class="diagram-viewer" id="diagram-viewer"><button class="diagram-close" type="button">닫기 ×</button><img alt="확대된 설계 구조도"/></dialog>
-<!-- 방문자에게 상세 분석 여부를 선택할 수 있도록 안내 -->
-<!-- GA4/Clarity 및 사용자 행동 분석 -->
-<!-- 이메일 복사 및 설계도 확대 기능 -->
+
+
+
 <script>
-      /**
-       * 포트폴리오 이용 통계 — GoatCounter + GA4 맞춤 이벤트
-       *
-       * 집계 대상:
-       *   - 상단 내비게이션 / 3개 프로젝트 카드 / 처음으로 돌아가기
-       *   - 증빙 링크 13개 / Gmail / 기본 메일 앱 / 이메일 복사 버튼
-       *   - 아키텍처 설계도 확대 및 닫기 / 콘텐츠 제목 화면 노출
-       *   - 페이지 활성 열람 시간의 구간별 도달
-       *
-       * 개인을 식별하는 값(IP, 이메일 주소, 방문자 ID 등)은 이벤트에 넣지 않습니다.
-       * 유입 경로는 GoatCounter가 URL의 utm_campaign/utm_source로 집계합니다.
-       * 보안/광고 차단 기능이 추적 요청을 막는 경우 이 코드로 우회하지 않습니다.
-       */
+      
       (() => {
         'use strict';
 
         const pendingEvents = [];
         const MAX_QUEUED_EVENTS = 100;
 
-        /**
-         * GoatCounter 스크립트가 비동기로 로드되는 동안 일시적으로 대기합니다.
-         * 외부 스크립트 또는 /count 요청이 차단되면 수집은 보장되지 않습니다.
-         */
+        
         function flushPending() {
           const count = window.goatcounter?.count;
           if (typeof count !== 'function') return;
@@ -2323,7 +2293,7 @@
             path,
             title: cleanTitle(title),
             event: true,
-            no_session: true // 같은 방문자의 반복 클릭도 매번 집계
+            no_session: true
           };
 
           if (typeof window.goatcounter?.count === 'function') {
@@ -2333,8 +2303,6 @@
             pendingEvents.push(event);
           }
 
-          // 같은 행동을 GA4에도 이벤트로 기록합니다. 개인 식별 값/이메일/외부 URL 제외.
-          // gtag은 로드 전에 호출해도 dataLayer에 큐잉됩니다.
           if (typeof window.gtag === 'function') {
             const category = path.split('/')[0];
             if (['click', 'view', 'result', 'engagement'].includes(category)) {
@@ -2355,22 +2323,17 @@
           return String(value || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 50);
         }
 
-        /**
-         * 클릭 요소가 추가되어도 동작하도록 이벤트 위임 방식으로 구성합니다.
-         * 연락처 주소, 링크 URL, 방문자 정보 대신 기능명과 컨텐츠명만 집계합니다.
-         */
+        
         function trackClicks() {
           const evidenceLinks = [...document.querySelectorAll('.evidence-link, .evidence-links a')];
           const evidenceIds = new WeakMap();
           evidenceLinks.forEach((link, index) => {
             const caseTitle = link.closest('.stage, .other')?.querySelector('h3')?.textContent;
             const title = cleanTitle(caseTitle ? `${caseTitle} · ${link.textContent}` : link.textContent);
-            // 고정 데이터 ID: 증빙 링크 순서를 변경해도 대시보드 항목은 유지됩니다.
             const id = shortId(link.dataset.analyticsId || String(index + 1).padStart(2, '0'));
             evidenceIds.set(link, { id, title });
           });
 
-          // 실제 클릭 시도마다 한 번씩 보냅니다. 새 창 링크도 추적합니다.
           document.addEventListener('click', (event) => {
             const el = event.target.closest('a, button, summary');
             if (!el) return;
@@ -2409,29 +2372,15 @@
             }
 
             if (el.matches('#copy-email')) {
-              // 버튼 클릭은 여기서, 실제 복사 성공/실패는 UI 코드에서 각각 전송.
               sendEvent('click/contact/copy-attempt', '이메일 주소 복사 버튼 클릭');
               return;
             }
 
-            if (el.matches('#privacy-note summary')) {
-              sendEvent('click/notice/privacy', '통계 안내 열기 또는 닫기');
-              return;
-            }
 
-            if (el.matches('#privacy-note a')) {
-              sendEvent('click/notice/privacy-link', '통계 안내 외부 문서 클릭');
-            }
-
-            // .arch-expand는 모달 열기에 성공했을 때만 view_diagram에서 집계.
-            // .diagram-close는 모달의 close 이벤트에서 집계하여 중복을 방지.
           }, { passive: true });
         }
 
-        /**
-         * 제목이 50% 이상 1.2초 노출되었을 때 그 페이지 로드에서 1회 집계합니다.
-         * '화면에 보임'은 읽거나 이해했다는 뜻이 아닙니다.
-         */
+        
         function trackVisibleContent() {
           if (typeof IntersectionObserver !== 'function') return;
           const candidates = [];
@@ -2448,23 +2397,26 @@
             add(heading, `view/section/${id}`, `섹션 노출 · ${cleanTitle(heading?.textContent)}`);
           });
 
-          // 실제 경력의 프로젝트 제목(기사 본문 카드별)에 대해 개별 집계.
           document.querySelectorAll('article.stage').forEach((stage, index) => {
             const heading = stage.querySelector('h3');
             const group = shortId(stage.closest('section[id]')?.id || 'other');
-            // 프로젝트 제목의 01-1 / 02-3 등의 번호를 고정 ID로 사용합니다.
             const match = heading?.textContent.match(/^\s*\d{2}-(\d+)\./);
             const number = match ? match[1].padStart(2, '0') : String(index + 1).padStart(2, '0');
             add(heading, `view/project/${group}/${number}`, `프로젝트 노출 · ${cleanTitle(heading?.textContent)}`);
           });
 
-          // '그 외 경력' 카드들.
+          document.querySelectorAll('.item[data-analytics-view]').forEach(item => {
+            const group = shortId(item.closest('section[id]')?.id || 'other');
+            const key = shortId(item.dataset.analyticsView);
+            const heading = item.querySelector('strong');
+            if (key) add(item, `view/detail/${group}/${key}`, `보완 항목 노출 · ${cleanTitle(heading?.textContent)}`);
+          });
+
           document.querySelectorAll('article.other').forEach((card, index) => {
             const heading = card.querySelector('h3');
             add(heading, `view/other/${String(index + 1).padStart(2, '0')}`, `기타 경력 노출 · ${cleanTitle(heading?.textContent)}`);
           });
 
-          // STT, LLM 등을 포함한 설계 사례의 제목.
           document.querySelectorAll('.arch-case').forEach((card, index) => {
             const heading = card.querySelector('h3');
             const key = shortId(card.id || String(index + 1).padStart(2, '0'));
@@ -2514,7 +2466,7 @@
           });
         }
 
-        /** 사용자별 체류 기록은 보관하지 않고, 도달한 시간 구간만 집계합니다. */
+        
         function trackEngagementMilestones() {
           const milestones = [15, 30, 60, 120];
           const counted = new Set();
@@ -2531,7 +2483,7 @@
           }, 1000);
         }
 
-        /** 기존 UI의 결과를 수신합니다. 추적 실패는 화면 동작을 방해하지 않습니다. */
+        
         window.PortfolioAnalytics = Object.freeze({
           track(name, params = {}) {
             if (name === 'contact_action') {
@@ -2571,7 +2523,6 @@
           flushPending();
         }
 
-        // count.js는 비동기로 로드되므로 초기 이벤트 유실을 줄입니다.
         window.addEventListener('load', flushPending, { once: true });
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', initialize, { once: true });
@@ -2580,13 +2531,7 @@
         }
       })();
 </script><script>
-      /**
-       * 기존 포트폴리오의 UI 기능
-       * - 이메일 주소 복사 및 실패 시 선택
-       * - 설계도 이미지 확대/닫기
-       *
-       * 기존 화면/마크업을 유지하며, 성공한 행동의 익명 집계 이벤트만 전송합니다.
-       */
+      
       (() => {
         'use strict';
       
@@ -2607,13 +2552,11 @@
             const email = address.textContent.trim();
             let copied = false;
       
-            // 보안 컨텍스트(HTTPS)에서는 Clipboard API를 우선 사용합니다.
             if (navigator.clipboard && window.isSecureContext) {
               try {
                 await navigator.clipboard.writeText(email);
                 copied = true;
               } catch (_) {
-                // 권한 거절 등의 경우 아래 호환 방식으로 재시도합니다.
               }
             }
       
@@ -2630,7 +2573,6 @@
               try {
                 copied = document.execCommand('copy');
               } catch (_) {
-                // 복사에 실패하면 원래 주소를 선택하여 수동 복사를 돕습니다.
               } finally {
                 field.remove();
               }
@@ -2690,7 +2632,6 @@
             }
           });
       
-          // Esc/닫기 버튼/배경 클릭 모두 동일한 close 이벤트에서 처리합니다.
           dialog.addEventListener('close', () => {
             if (openedAt === null) {
               return;

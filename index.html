@@ -3,6 +3,78 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
+<script>
+(() => {
+  'use strict';
+  const url = new URL(window.location.href);
+  const entries = {
+    jk: ['jobkorea', 'resume', 'jobkorea_resume'],
+    si: ['saramin', 'resume', 'saramin_resume'],
+    ig: ['instagram', 'social', 'instagram_profile'],
+    share: ['shared_link', 'link', 'portfolio_share']
+  };
+  const match = url.hash.match(/^#(jk|si|ig|share)(?:-(finance|mirero|douzone|rowem|rorze|architecture|skills|contact|about|projects))?$/);
+  const previous = history.state?.portfolioEntry;
+  let entry = null;
+  if (match) {
+    const values = entries[match[1]];
+    entry = { source: values[0], medium: values[1], campaign: values[2] };
+    url.hash = match[2] ? '#' + match[2] : '';
+  } else if (['utm_source', 'utm_medium', 'utm_campaign'].some(key => url.searchParams.has(key))) {
+    entry = {
+      source: (url.searchParams.get('utm_source') || '').slice(0, 100),
+      medium: (url.searchParams.get('utm_medium') || '').slice(0, 100),
+      campaign: (url.searchParams.get('utm_campaign') || '').slice(0, 100)
+    };
+  } else if (previous && typeof previous.source === 'string') {
+    entry = previous;
+  }
+  for (const key of [...url.searchParams.keys()]) {
+    if (key.startsWith('utm_')) url.searchParams.delete(key);
+  }
+  const remember = () => {
+    const state = history.state && typeof history.state === 'object' ? history.state : {};
+    history.replaceState({ ...state, ...(entry ? { portfolioEntry: entry } : {}) }, '', url.pathname + url.search + url.hash);
+  };
+  if (url.href !== window.location.href || entry) remember();
+  if (entry) {
+    window.addEventListener('hashchange', () => {
+      const state = history.state && typeof history.state === 'object' ? history.state : {};
+      history.replaceState({ ...state, portfolioEntry: entry }, '', window.location.href);
+    });
+  }
+  const query = new URLSearchParams();
+  if (entry?.source) query.set('utm_source', entry.source);
+  if (entry?.medium) query.set('utm_medium', entry.medium);
+  if (entry?.campaign) query.set('utm_campaign', entry.campaign);
+  let connected = false;
+  window.PortfolioEntry = Object.freeze({
+    campaign: entry ? Object.freeze({ ...entry }) : null,
+    connectCounter() {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => window.PortfolioEntry.connectCounter(), { once: true });
+        return;
+      }
+      const counter = window.goatcounter;
+      if (connected || typeof counter?.url !== 'function' || typeof counter?.count !== 'function') return;
+      connected = true;
+      if (query.size) {
+        const buildUrl = counter.url;
+        counter.url = function(vars) {
+          const value = buildUrl.call(counter, vars);
+          if (!value) return value;
+          const target = new URL(value, window.location.href);
+          target.searchParams.set('q', '?' + query.toString());
+          return target.href;
+        };
+      }
+      counter.count();
+      counter.bind_events?.();
+    }
+  });
+})();
+</script>
+
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="C#/.NET 기반 클라이언트·서비스 설계 및 개발 — 비즈니스 요구를 실행 가능한 소프트웨어 구조로 설계하고, 구현·최적화까지 책임지는 개발자입니다." name="description"/>
 <title>신충호 | 시니어 소프트웨어 엔지니어</title>
@@ -1682,27 +1754,46 @@
   });
 
   gtag('js', new Date());
+  const entryCampaign = window.PortfolioEntry?.campaign;
   gtag('config', 'G-79SCJTBGQ1', {
     allow_google_signals: false,
-    allow_ad_personalization_signals: false
+    allow_ad_personalization_signals: false,
+    ...(entryCampaign ? {
+      campaign_source: entryCampaign.source,
+      campaign_medium: entryCampaign.medium,
+      campaign_name: entryCampaign.campaign
+    } : {})
   });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-79SCJTBGQ1"></script>
 
 
 <script>
-    window.goatcounter = { path: '/' };
-</script><script async="" data-goatcounter="https://choongho-portfolio.goatcounter.com/count" src="https://gc.zgo.at/count.js">
+    window.goatcounter = { path: '/', no_onload: true };
+</script><script async="" data-goatcounter="https://choongho-portfolio.goatcounter.com/count" onload="window.PortfolioEntry.connectCounter()" src="https://gc.zgo.at/count.js">
 </script>
+
+<style>
+:root { --nav-min-height: 72px; --nav-height: 72px; }
+html { scroll-padding-top: calc(var(--nav-height) + 16px); }
+body { padding-top: var(--nav-height); }
+.site-nav { position: fixed; inset: 0 0 auto; z-index: 1000; background: rgba(255,249,242,.98); border-bottom: 1px solid #e3c8b2; box-shadow: 0 3px 14px rgba(79,39,12,.06); }
+.site-nav .topnav { height: auto; min-height: var(--nav-min-height); border-bottom: 0; padding: 12px 0; gap: 10px 16px; flex-wrap: wrap; }
+.site-nav .brand { flex-shrink: 0; }
+.site-nav .navlinks { flex-wrap: wrap; row-gap: 8px; }
+:is(section,header,article)[id] { scroll-margin-top: 0; }
+@media (max-width:700px) { :root { --nav-min-height: 64px; --nav-height: 64px; } }
+</style>
 </head>
 <body>
+<div class="site-nav"><div class="container"><nav class="topnav" aria-label="주요 메뉴">
+<div class="brand">신충호<span style="color:#ffb663">.</span></div>
+<div class="navlinks"><a href="#about">전문성</a><a href="#projects">프로젝트</a><a href="#skills">기술</a><a href="#architecture">설계 사례</a><a href="#contact">연락</a></div>
+</nav></div></div>
 
 <header class="hero" id="top">
 <div class="container">
-<nav class="topnav">
-<div class="brand">신충호<span style="color:#ffb663">.</span></div>
-<div class="navlinks"><a href="#about">전문성</a><a href="#projects">프로젝트</a><a href="#skills">기술</a><a href="#architecture">설계 사례</a><a href="#contact">연락</a></div>
-</nav>
+
 <div class="hero-inner">
 <div>
 <div class="overline">Senior Software Engineer  ·  C# / WPF</div>
@@ -2103,7 +2194,7 @@
 <div class="eyebrow">ADDITIONAL EXPERIENCE</div>
 <h2>성장의 토대가 된 다른 개발 경험</h2>
 <div class="other-grid">
-<article class="other">
+<article class="other" id="rowem">
 <h3>로웸 · NoWhere Box</h3>
 <div class="date">2017.07–2017.12</div>
 <p><span class="sentence-line">클라우드 및 로컬 암호화 파일 관리 클라이언트에서 로컬 파일 관리 기능과 WPF UI 구조를 개선했습니다.</span><span class="sentence-line">기존 화면·객체 생성 방식과 MVVM 구성의 문제를 분석해 리팩터링했습니다.</span></p>
@@ -2114,7 +2205,7 @@
 <div class="date">2018.02–2018.04</div>
 <p>가상화 환경의 VM 응용프로그램 관련 단기 개발 경험.</p>
 </article>
-<article class="other">
+<article class="other" id="rorze">
 <h3>로체시스템즈 · 제어 및 소프트웨어 개발의 출발점</h3>
 <div class="date">2010.06–2013.03</div>
 <p>Glass Laser Cutting Machine의 PLC·전장·HMI 및 현장 셋업을 수행했고, Pol Film Laser Cutter 파일럿에서 C# WinForms UI·제어 개발을 경험하며 소프트웨어 개발로 전문 영역을 확장했습니다.</p>
@@ -2661,5 +2752,24 @@
         }
       })();
     </script>
+
+<script>
+(() => {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  const resize = () => document.documentElement.style.setProperty('--nav-height', `${Math.ceil(nav.getBoundingClientRect().height)}px`);
+  resize();
+  if (typeof ResizeObserver === 'function') new ResizeObserver(resize).observe(nav);
+  else window.addEventListener('resize', resize, { passive: true });
+  if (window.location.hash) {
+    const showTarget = () => {
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    };
+    if (document.readyState === 'complete') showTarget();
+    else window.addEventListener('load', showTarget, { once: true });
+  }
+})();
+</script>
 </body>
 </html>

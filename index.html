@@ -870,25 +870,25 @@ body{background:var(--iv-paper);color:var(--iv-text)}
 .footer-copy h2 .footer-head-line,.footer-copy p .sentence-line{display:block!important}
 
 </style>
-<style id="invariant-v3-node-sequence">
 
-/* INVARIANT / CONTEXT / v3: node-and-thread identity, one editorial sequence. */
+
+
+
+
+
+
+
+
+
+
+<style id="invariant-v14-consolidated">
+/* Preserved effective rules originally in invariant-v3-node-sequence */
 :root { --flow-ink:#1C2725; --flow-main:#263E34; --flow-mid:#496451;
  --flow-light:#F8F6F0; --flow-amber:#E5BA87; --flow-copper:#BC855B;
  --flow-moss:#89947D; --flow-paper:#F4F1EA; --flow-hairline:#CFCBBE; }
-/* Six real chapters; small sequence numerals live adjacent to their section heading. */
-.sequence-counter { display:inline-flex; align-items:baseline; gap:7px; font-family:inherit; font-variant-numeric:tabular-nums;
- font-size:12px; font-weight:750; letter-spacing:.1em; color:#996D4C; vertical-align:baseline; white-space:nowrap; }
-.sequence-counter strong { font-size:1.12em; font-weight:850; letter-spacing:.07em; }
-.sequence-counter .sequence-total { color:#8E9184; font-weight:520; font-size:.88em; }
 .section .eyebrow { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
-.section .eyebrow .sequence-counter { border-left:1px solid #C8BBA7; padding-left:14px; margin-left:5px; }
-#architecture>.container>.eyebrow .sequence-counter{color:#996D4C}
 .hero-meta { display:flex; align-items:center; flex-wrap:wrap; gap:18px 25px; margin:0 0 35px; }
 .hero .hero-meta .overline { margin:0; }
-.sequence-counter--hero { color:var(--flow-amber); padding-right:20px; border-right:1px solid #778277; font-size:15px; }
-.sequence-counter--hero .sequence-total { color:#98A398; }
-/* Navigation uses nodes to show state, not a decorative electronics backdrop. */
 .site-nav { background:linear-gradient(90deg,#1C2725 0%,#1D2925 52%,#1C2725 100%); }
 .site-nav .topnav { position:relative; }
 .site-nav .navlinks a { display:inline-flex; align-items:center; gap:8px; position:relative; white-space:nowrap; }
@@ -899,38 +899,25 @@ body{background:var(--iv-paper);color:var(--iv-text)}
  background:#DDB184; border-color:#DDB184; box-shadow:0 0 0 3px rgba(221,177,132,.14); transform:scale(1.15); }
 .site-nav .navlinks a::after { background:#DDB184; height:1px; }
 .site-nav .navlinks a[aria-current="location"]::after { transform:scaleX(1); opacity:1; }
-/* Brand response: visible but not gimmicky; two parts move and change color independently. */
 .site-nav .brand-symbol { gap:2px; overflow:visible; }
 .site-nav .brand-symbol :is(.brand-operator,.brand-initials){display:inline-block;will-change:transform;transform-origin:center;
  transition:transform .23s cubic-bezier(.2,.8,.2,1),color .23s ease;}
-@media (hover:hover) and (pointer:fine) {
- .site-nav .brand-symbol:hover .brand-operator {color:#F5F0E7!important;transform:translateX(-2px) scale(1.08);}
- .site-nav .brand-symbol:hover .brand-initials {color:#E5BA87!important;transform:translateX(2px) scale(1.075);}
-}
+@media (hover:hover) and (pointer:fine) {.site-nav .brand-symbol:hover .brand-operator {color:#F5F0E7!important;transform:translateX(-2px) scale(1.08);}
+.site-nav .brand-symbol:hover .brand-initials {color:#E5BA87!important;transform:translateX(2px) scale(1.075);}}
 .site-nav .brand-symbol:focus-visible .brand-initials {color:#E5BA87!important;}
-/* Local process words are split across narrative beginning/end, not crammed into hero. */
 .hero .joint-scene .signal-illustration { filter:saturate(.95); }
 .footer-sequence { display:flex; align-items:center; flex-wrap:wrap; gap:15px; }
-.sequence-counter--footer {color:#E6B887; border-left:1px solid #718174; padding-left:15px; font-size:12px; }
-.sequence-counter--footer .sequence-total {color:#A3B0A1;}
-/* Footer continuation is a readable technical cadence, kept away from the inquiry actions. */
-.footer-copy .continuation-flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); position:relative;
- width:min(100%,445px); margin:37px 0 0; padding:0 0 0; align-items:start; gap:12px; }
-.footer-copy .continuation-flow::before { content:""; position:absolute; z-index:0; height:1px; top:6px;
- left:8px; right:8px; background:linear-gradient(90deg,#C29165,#8A9B83,#D4A277); opacity:.8; }
 .footer-copy .flow-stage {position:relative;z-index:1;display:flex;flex-direction:column;gap:15px;
- color:#CFD3C9;font:700 11px/1.5 'PortfolioSans','Malgun Gothic',sans-serif; letter-spacing:.12em;}
+ color:#CFD3C9;font:700 11px/1.5 "PortfolioSans","Malgun Gothic",sans-serif; letter-spacing:.12em;}
 .footer-copy .flow-stage i {display:block;width:13px;height:13px;border:2px solid #D9AF7F;border-radius:50%;background:#1C2725;
  box-sizing:border-box;box-shadow:0 0 0 5px #1C2725;}
 .footer-copy .flow-stage:nth-child(2) i{border-color:#A4A88F;}
 .footer-copy .flow-stage:nth-child(3) i {background:#D9AF7F;border-color:#D9AF7F;}
-/* Design links and diagram tools reference the SAME mineral dark ink and restrained copper. */
 #architecture .arch-expand {color:#425D46!important;border-bottom-color:#AD865F!important;}
 #architecture .arch-expand:hover {color:#875A37!important;border-bottom-color:#875A37!important;}
 #architecture .arch-expand svg {stroke:currentColor;}
 #architecture .design-tab[aria-selected="true"] {background:var(--flow-main);border-color:var(--flow-main);}
 #architecture .arch-figure {border-color:#C7CBBD!important;}
-/* Viewer controls, including zoom and pan feedback, use primary palette. */
 .diagram-viewer .diagram-toolbar {background:#263E34;color:#F7F5EF;border-color:#748675;}
 .diagram-viewer .diagram-tools button {background:#F3E8D9;border-color:#D0BEA6;color:#253A30;}
 .diagram-viewer .diagram-tools button:hover {background:#E5BA87;border-color:#C39060;color:#1C2725;}
@@ -938,108 +925,60 @@ body{background:var(--iv-paper);color:var(--iv-text)}
 .diagram-viewer .diagram-scale {color:#F8F6EF;border-color:#819181;}
 .diagram-viewer .diagram-scale input {color:#F8F6EF;background:transparent;}
 .diagram-viewer .diagram-help {background:#F4F1EA;color:#45594A;}
-/* Language control should be a neutral ivory state indicator, not a khaki target. */
 .footer .language-toggle {background:#26332E!important;border:1px solid #738073!important;}
 .footer .language-thumb {background:#E9DBC5!important;box-shadow:0 2px 7px rgba(0,0,0,.14)!important;}
 .footer .language-toggle button {color:#E4E9DF!important;position:relative;z-index:1;}
 .footer .language-toggle button[aria-checked="true"] {color:#28382E!important;}
 .footer .language-globe {color:#E5BA87!important;}
 .footer .language-toggle:focus-within {border-color:#E5BA87!important;}
-/* Responsive chapter treatment: do not make counters compete with the copy. */
-@media(max-width:750px){
- .site-nav .navlinks a{gap:5px;}
- .site-nav .navlinks a::before{width:4px;height:4px;}
- .hero-meta{gap:12px 14px;margin-bottom:26px;}
- .sequence-counter--hero{padding-right:12px;font-size:12px;}
- .section .eyebrow{gap:9px;}
- .section .eyebrow .sequence-counter{padding-left:10px;margin-left:0;}
- .footer-copy .continuation-flow{margin-top:29px;gap:7px;}
- .footer-copy .flow-stage{letter-spacing:.08em;font-size:10px;}
-}
-@media(max-width:380px){ .hero-meta {gap:10px;} .hero .hero-meta .overline{letter-spacing:.08em;font-size:9px;}}
+@media(max-width:750px){.site-nav .navlinks a{gap:5px;}
+.site-nav .navlinks a::before{width:4px;height:4px;}
+.hero-meta{gap:12px 14px;margin-bottom:26px;}
+.section .eyebrow{gap:9px;}
+.footer-copy .flow-stage{letter-spacing:.08em;font-size:10px;}}
+@media(max-width:380px){.hero-meta {gap:10px;}
+.hero .hero-meta .overline{letter-spacing:.08em;font-size:9px;}}
 @media(prefers-reduced-motion:reduce){.site-nav .brand-symbol :is(.brand-operator,.brand-initials),.site-nav .navlinks a::before{transition:none!important;}}
-
-</style>
-<style id="invariant-v4-targeted-corrections">
-
-/* INVARIANT / CONTEXT v4 -- targeted corrections, no layout redesign. */
-/* V3 chapter counters removed: the process sequence has meaning only in the line art. */
+/* Preserved effective rules originally in invariant-v4-targeted-corrections */
 .hero .overline { margin-bottom:35px; }
-/* Footer flow is native background svg: no fake button-like stage row. */
 .footer .joint-coda .coda-phases { pointer-events:none; }
 .footer .joint-coda .coda-phases text { paint-order:stroke;stroke:#1C2824;stroke-width:1.1px;stroke-opacity:.32; }
-/* Footer stages have a compact connected representation only when ambient SVG cannot fit. */
-.mobile-coda-phases {display:none;}
-@media(max-width:659px){
- .footer-layout{position:relative;}
- .mobile-coda-phases {display:block;width:100%;max-width:360px;height:103px;margin:5px auto 8px;overflow:hidden;pointer-events:none;}
- .mobile-coda-phases svg {width:100%;height:100%;display:block;}
- .footer .joint-coda .coda-phases{opacity:0;}
-}
-/* Third additional career card returns to original left column, same width as first two. */
-@media(min-width:660px) {
- #additional-experience .other-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
- #additional-experience .other-grid > .other:last-child:nth-child(odd) {
+@media(max-width:659px){.footer-layout{position:relative;}
+.footer .joint-coda .coda-phases{opacity:0;}}
+@media(min-width:660px) {#additional-experience .other-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+#additional-experience .other-grid > .other:last-child:nth-child(odd) {
   grid-column:1!important; width:100%!important; max-width:100%!important;
   min-width:0!important; justify-self:stretch!important; background:#FBFAF6!important;
   border-top:2px solid #BC946E!important;
- }
-}
-/* Rebalance empty white diagram surfaces while preserving the original drawing. */
+ }}
 #architecture .arch-figure {background:#F6F3EC!important;border-color:#D8D2C4!important;}
 #architecture .arch-figure img {background:#F6F3EC!important;}
 #architecture .design-decision {padding:15px 18px 16px!important;box-sizing:border-box;}
 #architecture .design-decision strong,#architecture .design-decision p {margin-left:0;}
-/* The language pill belongs to the warm copper/amber accent, matching its globe. */
 .footer .language-thumb {background:#D8A36B!important;box-shadow:0 2px 7px rgba(0,0,0,.2)!important;}
 .footer .language-globe {color:#D8A36B!important;}
 .footer .language-toggle button[aria-checked="true"] {color:#1C2725!important;}
 .footer .language-toggle {border-color:#768579!important;}
-/* Do not reintroduce chapter numbers on small screens. */
-@media(max-width:659px){ #additional-experience .other-grid > .other:last-child:nth-child(odd){grid-column:1/-1!important;width:100%!important;} }
-
-</style>
-<style id="invariant-v5-unified-diagram-and-sequence">
-
-/* v5: footer ambient artwork uses EXACT hero line, point and annotation styling. */
+@media(max-width:659px){#additional-experience .other-grid > .other:last-child:nth-child(odd){grid-column:1/-1!important;width:100%!important;}}
+/* Preserved effective rules originally in invariant-v5-unified-diagram-and-sequence */
 .footer .joint-coda {opacity:.66!important;transform:translateX(-10%);}
 .footer .joint-coda .signal-illustration {width:100%;height:100%;}
-.footer .joint-coda .mobile-coda-art {display:none;}
-.mobile-coda-phases{display:none!important;}
-/* Keep footer annotation in the background rather than forming a UI row. */
-@media(max-width:659px){
- .footer .joint-coda {opacity:.72!important;inset:0!important;transform:none!important;}
- .footer .joint-coda .signal-illustration {display:none!important;}
- .footer .joint-coda .mobile-coda-art {display:block!important;width:100%;height:auto;position:absolute;top:285px;left:0;}
- .footer .footer-contact {margin-top:158px!important;}
-}
-/* Diagram figure frames and embedded SVG both share the same warm paper background. */
+@media(max-width:659px){.footer .joint-coda {opacity:.72!important;inset:0!important;transform:none!important;}
+.footer .joint-coda .signal-illustration {display:none!important;}
+.footer .footer-contact {margin-top:158px!important;}}
 #architecture .arch-figure,#architecture .arch-figure img {background:#F6F3EC!important;}
 #architecture .arch-figure {border-color:#D4C9B8!important;}
-
-</style>
-<style id="invariant-v6-footer-and-diagram-palette">
-
-/* v6: original footer scene restored at its established coordinates; annotations match hero exactly. */
+/* Preserved effective rules originally in invariant-v6-footer-and-diagram-palette */
 .footer .joint-coda {inset:0!important;transform:none!important;opacity:.60!important;pointer-events:none!important;}
 .footer .joint-coda .signal-illustration {width:100%!important;height:100%!important;display:block!important;}
 .footer .joint-coda .coda-phases {pointer-events:none!important;opacity:1!important;}
 .footer .joint-coda .coda-phases text {stroke:none!important;paint-order:normal!important;font-family:monospace!important;font-size:12px!important;font-weight:400!important;letter-spacing:2px!important;}
-.footer .mobile-coda-art,.footer .mobile-coda-phases {display:none!important;}
-@media (max-width:659px){
-  .footer .joint-coda {inset:0!important;opacity:.60!important;transform:none!important;}
-  .footer .joint-coda .signal-illustration{display:none!important;}
-  .footer .joint-coda .mobile-coda-art{display:block!important;position:absolute;top:269px;left:0;width:100%;height:150px;}
-  .footer .joint-coda .coda-phases {opacity:1!important;}
-  .footer .footer-contact {margin-top:133px!important;}
-}
-/* All schematic image frames share one paper surface with their embedded diagram canvas. */
+@media (max-width:659px){.footer .joint-coda {inset:0!important;opacity:.60!important;transform:none!important;}
+.footer .joint-coda .signal-illustration{display:none!important;}
+.footer .joint-coda .coda-phases {opacity:1!important;}
+.footer .footer-contact {margin-top:133px!important;}}
 #architecture .arch-figure,#architecture .arch-figure img {background:#F6F3EC!important;}
-
-</style>
-<style id="invariant-v7-diagram-and-modal-fixes">
-
-/* v7: legible zoom and a consistent mineral-charcoal/bronze diagram system */
+/* Preserved effective rules originally in invariant-v7-diagram-and-modal-fixes */
 #diagram-viewer .diagram-toolbar{background:#222923!important;color:#FAF8F2!important;border-bottom:1px solid #A58A67!important;}
 #diagram-viewer .diagram-title{color:#FAF8F2!important;}
 #diagram-viewer .diagram-tools .diagram-scale{color:#29322D!important;background:#FCFAF5!important;border:1px solid #A99A84!important;}
@@ -1055,27 +994,21 @@ body{background:var(--iv-paper);color:var(--iv-text)}
 #diagram-viewer .diagram-tools .diagram-close,#diagram-viewer .diagram-toolbar>.diagram-close{background:#E5C99F!important;color:#222923!important;border-color:#B7824B!important;}
 #diagram-viewer .diagram-viewport{background:#F6F2E9!important;}
 #architecture .arch-figure,#architecture .arch-figure img{background:#F6F2E9!important;}
-
-</style>
-<style id="invariant-v8-consistent-card-interaction">
-
-/* v8: cards keep one surface colour; interaction is expressed by the timeline nodes. */
-@media (hover:hover) and (pointer:fine) {
-  #projects .project-link:hover {
+/* Preserved effective rules originally in invariant-v8-consistent-card-interaction */
+@media (hover:hover) and (pointer:fine) {#projects .project-link:hover {
     background-color:#FBFAF6!important;
     border-color:#D2D0C8!important;
     box-shadow:none!important;
     transform:none!important;
   }
-  #projects .project-link:hover::before {
+#projects .project-link:hover::before {
     background:#BD8658!important;
     border-color:#94633D!important;
     box-shadow:0 0 0 6px var(--iv-canvas)!important;
     transform:scale(1.1);
   }
-  #projects .project-link:hover::after {background:#986C48!important;}
-  #projects .project-link:hover .arrow {color:#9B6741!important;transform:translateY(3px);}
-}
+#projects .project-link:hover::after {background:#986C48!important;}
+#projects .project-link:hover .arrow {color:#9B6741!important;transform:translateY(3px);}}
 #projects .project-link:active,
 #projects .project-link:focus-visible {
   background-color:#FBFAF6!important;
@@ -1085,176 +1018,114 @@ body{background:var(--iv-paper);color:var(--iv-text)}
 #projects .project-link::before,
 #projects .project-link::after,
 #projects .project-link .arrow {transition:color .2s ease,background-color .2s ease,border-color .2s ease,transform .2s ease;}
-@media (prefers-reduced-motion:reduce){
-  #projects .project-link::before,#projects .project-link::after,#projects .project-link .arrow{transition:none!important;}
-}
-
-</style>
-<style id="invariant-v9-responsive-sequence">
-
-/* v9: preserve the approved desktop artwork; repair tablet/mobile composition and bilingual invariance. */
-.mobile-hero-flow,.mobile-footer-flow{display:none;pointer-events:none;user-select:none;}
-/* Use one shared visual hierarchy for ambient annotations in HERO and FOOTER.
-   Applied after section overlays, rather than increasing all other background marks. */
+@media (prefers-reduced-motion:reduce){#projects .project-link::before,#projects .project-link::after,#projects .project-link .arrow{transition:none!important;}}
+/* Preserved effective rules originally in invariant-v9-responsive-sequence */
+.mobile-footer-flow{display:none;pointer-events:none;user-select:none;}
 .hero .joint-scene .signal-illustration g[font-family="monospace"]{fill-opacity:.68;}
 .footer .joint-coda .signal-illustration .coda-phases{fill-opacity:.75;}
-/* Fixed stage for the original footer paths: translation can change content height,
-   but must NOT resize or reposition the SVG coordinate system. */
-@media (min-width:660px) and (max-width:1100px){
-  .footer .joint-coda{inset:0 0 auto 0!important;height:500px!important;overflow:hidden!important;transform:none!important;}
-  .footer .joint-coda > svg.signal-illustration{
+@media (min-width:660px) and (max-width:1100px){.footer .joint-coda{inset:0 0 auto 0!important;height:500px!important;overflow:hidden!important;transform:none!important;}
+.footer .joint-coda > svg.signal-illustration{
     position:absolute!important;top:0!important;left:50%!important;
     width:100%!important;height:500px!important;min-height:0!important;
     transform:translateX(-50%)!important;
   }
-  /* The translated copy stays in natural flow without changing the artwork. */
-  .hero .joint-scene{left:20%!important;right:-7%!important;opacity:.88!important;}
-  .hero::after{background:linear-gradient(90deg,rgba(28,39,37,.98) 0%,rgba(28,39,37,.91) 32%,rgba(28,39,37,.48) 64%,rgba(28,39,37,.20) 100%)!important;}
-}
-@media (max-width:659px){
-  /* Keep copy first. The existing 920x700 landscape artwork was clipped on phones.
-     A small responsive rendition below the copy carries exactly the same 01-03 identity. */
-  .hero .joint-scene{display:none!important;}
-  .hero .mobile-hero-flow{display:block;position:absolute;z-index:0;bottom:9px;left:0;right:0;height:178px;opacity:.94;overflow:hidden;}
-  .hero .mobile-hero-flow svg{display:block;height:100%;width:100%;max-width:420px;margin:0 auto;}
-  .hero .hero-inner{padding-bottom:225px!important;}
-  .hero::after{background:linear-gradient(90deg,rgba(28,39,37,.97) 0%,rgba(28,39,37,.88) 55%,rgba(28,39,37,.61) 100%)!important;}
-  /* Footer graphic participates in copy/contact layout instead of floating at a
-     hardcoded Y that shifts under translated text. */
-  .footer .joint-coda .mobile-coda-art{display:none!important;}
-  .footer .mobile-footer-flow{display:block;position:relative;width:100%;max-width:390px;height:150px;margin:24px auto 20px;overflow:hidden;opacity:.88;}
-  .footer .mobile-footer-flow svg{display:block;width:100%;height:150px;}
-  .footer .footer-contact{margin-top:0!important;}
-  .footer .joint-coda {opacity:.60!important;}
-}
-@media (prefers-reduced-motion:reduce){.mobile-hero-flow *, .mobile-footer-flow * {transition:none!important;}}
-
-</style>
-
-<style id="invariant-v12-single-artwork-responsive">
-/* v12 — one source artwork per section; untouched approved desktop.
-   Narrow layout crops the ORIGINAL SVG without deforming it or scaling it
-   with translated text. Changes apply only at <=1100px. */
-@media (max-width:1100px){
-  #contact .tablet-footer-flow{display:none!important;}
-  #top .mobile-hero-flow,#contact .mobile-coda-art{display:none!important;}
-  #contact .joint-coda{
+.hero .joint-scene{left:20%!important;right:-7%!important;opacity:.88!important;}
+.hero::after{background:linear-gradient(90deg,rgba(28,39,37,.98) 0%,rgba(28,39,37,.91) 32%,rgba(28,39,37,.48) 64%,rgba(28,39,37,.20) 100%)!important;}}
+@media (max-width:659px){.hero .joint-scene{display:none!important;}
+.hero .hero-inner{padding-bottom:225px!important;}
+.hero::after{background:linear-gradient(90deg,rgba(28,39,37,.97) 0%,rgba(28,39,37,.88) 55%,rgba(28,39,37,.61) 100%)!important;}
+.footer .mobile-footer-flow{display:block;position:relative;width:100%;max-width:390px;height:150px;margin:24px auto 20px;overflow:hidden;opacity:.88;}
+.footer .mobile-footer-flow svg{display:block;width:100%;height:150px;}
+.footer .footer-contact{margin-top:0!important;}
+.footer .joint-coda {opacity:.60!important;}}
+@media (prefers-reduced-motion:reduce){.mobile-footer-flow *{transition:none!important;}}
+/* Preserved effective rules originally in invariant-v12-single-artwork-responsive */
+@media (max-width:1100px){#contact .joint-coda{
     display:block!important;position:absolute!important;
     inset:0!important;width:100%!important;height:100%!important;
     overflow:hidden!important;transform:none!important;
     opacity:.66!important;pointer-events:none!important;
   }
-  /* Isolate the graphic from the bilingual content's computed height. */
-  #contact .joint-coda > svg.signal-illustration{
+#contact .joint-coda > svg.signal-illustration{
     display:block!important;position:absolute!important;
     width:720px!important;height:464px!important;
     max-width:none!important;min-width:0!important;min-height:0!important;
     left:-185px!important;top:62px!important;
     transform:none!important;overflow:visible!important;
   }
-  #contact .footer-layout{min-height:0!important;}
-}
-/* Tablet keeps the existing two-column contact layout. The original line
-   passes through the available lower-left field, not through the copy. */
-@media (min-width:660px) and (max-width:1100px){
-  #contact .joint-coda{
+#contact .footer-layout{min-height:0!important;}}
+@media (min-width:660px) and (max-width:1100px){#contact .joint-coda{
     -webkit-mask-image:linear-gradient(to bottom,transparent 0px,transparent 267px,#000 282px,#000 100%)!important;
     mask-image:linear-gradient(to bottom,transparent 0px,transparent 267px,#000 282px,#000 100%)!important;
   }
-  #contact .footer-main{padding-bottom:40px!important;}
-  #top .joint-scene {opacity:.88!important;}
-}
-/* Phone: show the meaningful right half of the SAME 920x700 hero SVG.
-   Desktop nodes/text are not redrawn; only crop, scale and contrast differ.
-   The original 900x580 footer SVG likewise occupies the already existing
-   visual pause between the copy and contact card. */
-@media (max-width:659px){
-  #top .joint-scene{
+#contact .footer-main{padding-bottom:40px!important;}
+#top .joint-scene {opacity:.88!important;}}
+@media (max-width:659px){#top .joint-scene{
     display:block!important;position:absolute!important;
     left:0!important;right:0!important;top:auto!important;bottom:5px!important;
     width:100%!important;height:258px!important;
     opacity:1!important;overflow:hidden!important;
     transform:none!important;
   }
-  #top .joint-scene > svg.signal-illustration{
+#top .joint-scene > svg.signal-illustration{
     display:block!important;position:absolute!important;
     left:-302px!important;top:-222px!important;
     width:754.4px!important;height:574px!important;
     min-height:0!important;max-width:none!important;
     transform:none!important;filter:none!important;
   }
-  #top .joint-scene svg g[font-family="monospace"]{
+#top .joint-scene svg g[font-family="monospace"]{
     fill-opacity:.88!important;font-size:15px!important;letter-spacing:1.4px!important;
   }
-  #top .hero-inner{padding-bottom:288px!important;}
-  /* An image should not be darkened by the copy-protection gradient at the bottom. */
-  #top.hero::after{background:linear-gradient(to bottom,rgba(28,39,37,.96) 0%,rgba(28,39,37,.90) 56%,rgba(28,39,37,.34) 80%,rgba(28,39,37,.11) 100%)!important;}
-  #contact .joint-coda > svg.signal-illustration{
+#top .hero-inner{padding-bottom:288px!important;}
+#top.hero::after{background:linear-gradient(to bottom,rgba(28,39,37,.96) 0%,rgba(28,39,37,.90) 56%,rgba(28,39,37,.34) 80%,rgba(28,39,37,.11) 100%)!important;}
+#contact .joint-coda > svg.signal-illustration{
     left:-187px!important;top:105px!important;
     width:648px!important;height:417.6px!important;
   }
-  #contact .joint-coda{
+#contact .joint-coda{
     -webkit-mask-image:linear-gradient(to bottom,transparent 0px,transparent 275px,#000 300px,#000 100%)!important;
     mask-image:linear-gradient(to bottom,transparent 0px,transparent 275px,#000 300px,#000 100%)!important;
     opacity:.77!important;
   }
-  #contact .joint-coda svg .coda-phases{opacity:1!important;fill-opacity:.83!important;}
-  #contact .joint-coda svg .coda-phases text{font-size:16px!important;letter-spacing:1.5px!important;}
-  /* Keep the v9 spacing already reserved for a visual element, no duplicate SVG. */
-  #contact .mobile-footer-flow{display:block!important;position:relative!important;
+#contact .joint-coda svg .coda-phases{opacity:1!important;fill-opacity:.83!important;}
+#contact .joint-coda svg .coda-phases text{font-size:16px!important;letter-spacing:1.5px!important;}
+#contact .mobile-footer-flow{display:block!important;position:relative!important;
     width:100%!important;max-width:390px!important;height:150px!important;
     margin:24px auto 20px!important;pointer-events:none!important;}
-  #contact .footer-contact{margin-top:0!important;}
-}
-/* At small-tablet widths the footer naturally becomes single-column.
-   Give the original artwork a place between the two content groups. */
-@media (min-width:660px) and (max-width:750px){
-  #contact .joint-coda{
+#contact .footer-contact{margin-top:0!important;}}
+@media (min-width:660px) and (max-width:750px){#contact .joint-coda{
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 385px,#000 415px,#000 100%)!important;
     mask-image:linear-gradient(to bottom,transparent 0,transparent 385px,#000 415px,#000 100%)!important;
   }
-  #contact .joint-coda > svg.signal-illustration{
+#contact .joint-coda > svg.signal-illustration{
     left:-165px!important;top:225px!important;width:648px!important;height:417.6px!important;
   }
-  #contact .footer-contact{margin-top:125px!important;}
-}
-@media (max-width:360px){
-  #top .joint-scene > svg.signal-illustration{left:-316px!important;}
-  #contact .joint-coda > svg.signal-illustration{left:-199px!important;top:150px!important;}
-  #contact .joint-coda{
+#contact .footer-contact{margin-top:125px!important;}}
+@media (max-width:360px){#top .joint-scene > svg.signal-illustration{left:-316px!important;}
+#contact .joint-coda > svg.signal-illustration{left:-199px!important;top:150px!important;}
+#contact .joint-coda{
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 310px,#000 337px,#000 100%)!important;
     mask-image:linear-gradient(to bottom,transparent 0,transparent 310px,#000 337px,#000 100%)!important;
-  }
-}
-@media (max-width:340px){
-  #contact .joint-coda > svg.signal-illustration{top:185px!important;}
-  #contact .joint-coda{
+  }}
+@media (max-width:340px){#contact .joint-coda > svg.signal-illustration{top:185px!important;}
+#contact .joint-coda{
     -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 350px,#000 375px,#000 100%)!important;
     mask-image:linear-gradient(to bottom,transparent 0,transparent 350px,#000 375px,#000 100%)!important;
-  }
-}
-</style>
-
-<style id="invariant-v13-responsive-qa-fixes">
-/* Tablet and phone ONLY. Do not change approved desktop (>1100px). */
-@media (max-width:1100px) {
-  /* Artwork is anchored to the start of the footer, not its translation-dependent height.
-     It may not paint over the border or the language/technology dock below .footer-main. */
-  #contact .joint-coda {
+  }}
+/* Preserved effective rules originally in invariant-v13-responsive-qa-fixes */
+@media (max-width:1100px) {#contact .joint-coda {
     top:0!important; bottom:auto!important;
     height:var(--qa-footer-main-height, calc(100% - 64px))!important;
     max-height:var(--qa-footer-main-height, 9999px)!important;
     overflow:hidden!important;
   }
-  #contact .joint-coda > svg.signal-illustration {
+#contact .joint-coda > svg.signal-illustration {
     transform:none!important;
     min-height:0!important;
     max-width:none!important;
-  }
-}
-/* The SAME desktop SVG, re-framed as one coherent artwork on tablets. */
-@media (min-width:660px) and (max-width:1100px) {
-  #top .joint-scene {
+  }}
+@media (min-width:660px) and (max-width:1100px) {#top .joint-scene {
     display:block!important;
     position:absolute!important;
     top:clamp(75px,11vw,118px)!important;bottom:auto!important;left:auto!important;right:0!important;
@@ -1263,34 +1134,32 @@ body{background:var(--iv-paper);color:var(--iv-text)}
     overflow:hidden!important;opacity:.88!important;
     transform:none!important;
   }
-  #top .joint-scene > svg.signal-illustration {
+#top .joint-scene > svg.signal-illustration {
     position:absolute!important;inset:0!important;
     width:100%!important;height:100%!important;
     min-height:0!important;max-width:none!important;
     filter:none!important;
     transform:none!important;
-  }
-}
-/* On coarse/touch pointers, persistent :hover is not a navigation selection.
-   Only aria-current=location should retain selected styling. */
-@media (hover:none), (pointer:coarse) {
-  .site-nav .navlinks a:not([aria-current="location"]),
+  }}
+@media (hover:none), (pointer:coarse) {.site-nav .navlinks a:not([aria-current="location"]),
   .site-nav .navlinks a:not([aria-current="location"]):hover {
     color:#DEE1D7!important;
   }
-  .site-nav .navlinks a:not([aria-current="location"])::before,
+.site-nav .navlinks a:not([aria-current="location"])::before,
   .site-nav .navlinks a:not([aria-current="location"]):hover::before {
     background:transparent!important;
     border-color:#798477!important;
     box-shadow:none!important;
     transform:none!important;
   }
-  .site-nav .navlinks a:not([aria-current="location"])::after,
+.site-nav .navlinks a:not([aria-current="location"])::after,
   .site-nav .navlinks a:not([aria-current="location"]):hover::after {
     transform:scaleX(0)!important;
     opacity:0!important;
-  }
-}
+  }}
+/* v14: Keep gradient headline and full descender of "working" (g). */
+html[lang="en"] .hero .hero-heading-result { line-height:1.37; }
+
 </style>
 </head>
 <body>
